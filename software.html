@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Software | Dominik J. Otto</title>
+<meta name="description" content="Open-source software by Dominik J. Otto: Mellon, Kompot, AnnZarro, Palantir, 2for1separator, kdpeak, agent_sandbox and Nexus, with GitHub, documentation and DOI links.">
+<meta name="author" content="Dominik J. Otto">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111416" media="(prefers-color-scheme: dark)">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-UGD8TD5S4NwaPHB6+f7hoa4Rsti+CuU7B2qfrtpLj6g='; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<link rel="canonical" href="https://katosh.github.io/software.html">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dominik J. Otto">
+<meta property="og:title" content="Software by Dominik J. Otto">
+<meta property="og:description" content="Open-source software by Dominik J. Otto: Mellon, Kompot, AnnZarro, Palantir, 2for1separator, kdpeak, agent_sandbox and Nexus, with GitHub, documentation and DOI links.">
+<meta property="og:url" content="https://katosh.github.io/software.html">
+<meta property="og:image" content="https://katosh.github.io/assets/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="css/site.css">
+<script src="js/site.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Software by Dominik J. Otto",
+  "url": "https://katosh.github.io/software.html",
+  "about": { "@id": "https://katosh.github.io/#person" }
+}
+</script>
+</head>
+<body>
+<!-- HEADER:START -->
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" data-open="false">
+  <div class="wrap">
+    <a class="brand" href="index.html">Dominik J. Otto</a>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="software.html" aria-current="page">Software</a>
+      <a href="ai.html">AI</a>
+      <a href="publications.html">Publications</a>
+      <a href="talks.html">Talks</a>
+      <a href="teaching.html">Teaching &amp; service</a>
+      <a href="cv.pdf">CV</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="icon-btn theme-toggle" type="button" aria-label="Switch theme"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    <button class="icon-btn nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+<!-- HEADER:END -->
+
+<main id="main">
+<section class="page-head">
+  <div class="wrap">
+    <h1>Software</h1>
+    <p>Every method I develop is released as open-source software with documentation, continuous integration and archived releases. Stable releases carry a Zenodo DOI; the DOIs below are concept DOIs, which always resolve to the latest version.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap">
+    <h2>Single-cell methods</h2>
+    <div class="grid grid-2">
+
+      <article class="card" id="mellon">
+        <p class="kicker">Lead developer</p>
+        <h3>Mellon</h3>
+        <p>Cell-state density estimation. Mellon infers how densely cells populate each state as a Gaussian process over cell-state space, from the distances between neighboring cells, and scales to millions of cells with uncertainty. The density separates stable from transitional states and locates fate commitment. Mellon is integrated into Palantir, an scverse ecosystem package.</p>
+        <p class="small">Install: <code class="install">pip install mellon</code> &middot; Paper: <a href="https://doi.org/10.1038/s41592-024-02302-w"><em>Nature Methods</em>, 2024</a></p>
+        <div class="sw-links">
+          <a href="https://github.com/settylab/mellon">GitHub</a>
+          <a href="https://mellon.readthedocs.io">Documentation</a>
+          <a href="https://pypi.org/project/mellon/">PyPI</a>
+          <a href="https://doi.org/10.5281/zenodo.7328898">doi:10.5281/zenodo.7328898</a>
+        </div>
+      </article>
+
+      <article class="card" id="kompot">
+        <p class="kicker">Lead developer</p>
+        <h3>Kompot</h3>
+        <p>Cluster-free differential expression and abundance. Kompot models expression in each condition as a Gaussian-process function on the shared space of cell states and compares the conditions cell by cell with posterior uncertainty, so that changes graded along a transition or confined to part of a cell type are not averaged away. Kompot is an scverse ecosystem package.</p>
+        <p class="small">Install: <code class="install">pip install kompot</code> &middot; Preprint: <a href="https://doi.org/10.1101/2025.06.03.657769">bioRxiv, under review at <em>Cell Systems</em></a></p>
+        <div class="sw-links">
+          <a href="https://github.com/settylab/kompot">GitHub</a>
+          <a href="https://kompot.readthedocs.io">Documentation</a>
+          <a href="https://pypi.org/project/kompot/">PyPI</a>
+          <a href="https://doi.org/10.5281/zenodo.17281114">doi:10.5281/zenodo.17281114</a>
+        </div>
+      </article>
+
+      <article class="card" id="palantir">
+        <p class="kicker">Co-maintainer</p>
+        <h3>Palantir</h3>
+        <p>Cell-fate probabilities along differentiation trajectories, developed in the Pe'er laboratory; an scverse ecosystem package. I co-maintain it and integrated Mellon into it, so that cell-state densities can be computed within Palantir analyses.</p>
+        <p class="small">Install: <code class="install">pip install palantir</code></p>
+        <div class="sw-links">
+          <a href="https://github.com/dpeerlab/Palantir">GitHub</a>
+          <a href="https://palantir.readthedocs.io">Documentation</a>
+          <a href="https://pypi.org/project/palantir/">PyPI</a>
+        </div>
+      </article>
+
+      <article class="card card-wide" id="annzarro">
+        <p class="kicker">Lead developer</p>
+        <h3>AnnZarro</h3>
+        <p>A read-only browser viewer for AnnData in zarr or h5ad, built around cell-by-cell kernels and distances and gene-by-gene similarities, explored one cell or gene at a time and linked to the expression layers. Clicking a cell paints its row of any cell-by-cell matrix over an embedding or over the tissue section of a spatial dataset. It reads only the chunks on screen, so its cost follows the view rather than the size of the dataset, locally or from cloud storage, and it never writes data or runs code. MIT license, with desktop apps.</p>
+        <p class="small">Install: <code class="install">pip install annzarro</code> &middot; Preprint: <a href="https://doi.org/10.64898/2026.10.10.758158">bioRxiv, 2026</a></p>
+        <div class="sw-figures">
+          <figure>
+            <div class="figure-panel">
+              <a href="assets/img/az-xenium-celltypes@2x.webp" title="Open the full-resolution image"><img src="assets/img/az-xenium-celltypes.webp" srcset="assets/img/az-xenium-celltypes.webp 1x, assets/img/az-xenium-celltypes@2x.webp 2x" width="1100" height="535" loading="lazy"
+                   alt="A coronal section of a mouse brain in which every cell is a colored dot: cortical layers in orange and brown, the hippocampus in blue, white matter in grey. A boxed region is enlarged at the right, where single cells of the hippocampus and the deep cortex are visible."></a>
+            </div>
+            <figcaption>A spatial dataset in AnnZarro: a coronal mouse brain section with all of about 160,000 cells drawn and colored by cell type (assigned from marker genes); the inset shows single cells of the deep cortex, CA1 and dentate gyrus. Public 10x Genomics Xenium data (CC BY 4.0), drawn with AnnZarro 0.7.5.</figcaption>
+          </figure>
+          <figure>
+            <div class="figure-panel">
+              <a href="assets/img/az-xenium-walk@2x.webp" title="Open the full-resolution image"><img src="assets/img/az-xenium-walk.webp" srcset="assets/img/az-xenium-walk.webp 1x, assets/img/az-xenium-walk@2x.webp 2x" width="1200" height="423" loading="lazy"
+                   alt="Two copies of a coronal mouse brain section in grey. Left: a band through the middle layers of the cortex in both hemispheres is colored blue. Right: the CA1 band of the hippocampus in both hemispheres is colored blue."></a>
+            </div>
+            <figcaption>Clicking a cell on the tissue. Each section is colored by a five-step random walk on the gene-expression neighbor graph, started from one cell (black dot): a neuron of the middle cortical layers (left) and a hippocampal CA1 neuron (right). The walk moves only between cells with similar expression, never between tissue neighbors, yet it lands in the cell's own cortical layer (left) or hippocampal field (right), in both hemispheres. Same section and data, exported with AnnZarro 0.7.5.</figcaption>
+          </figure>
+        </div>
+        <div class="sw-links">
+          <a href="https://github.com/settylab/annzarro">GitHub</a>
+          <a href="https://annzarro.readthedocs.io">Documentation</a>
+          <a href="https://pypi.org/project/annzarro/">PyPI</a>
+          <a href="https://doi.org/10.5281/zenodo.23222216">doi:10.5281/zenodo.23222216</a>
+        </div>
+      </article>
+
+    </div>
+
+    <h3 id="annzarro-explore">Exploring one cell at a time</h3>
+    <p class="prose">Each step below is one click in AnnZarro: the clicked cell's row of a cell-by-cell distance matrix repaints every cell of the dataset.</p>
+    <!-- Scroll-stepped figure, requested by Dominik as the one exception to the two scroll animations:
+         each step swaps the still (data-still, js/site.js). Under reduced motion or without JavaScript,
+         the steps read as a list with their own image. Frames: annzarro export, see assets/MANIFEST.md. -->
+    <div class="scrolly scrolly-explore" data-scrolly>
+      <figure class="scrolly-graphic">
+        <div class="figure-panel">
+          <img class="scrolly-still" src="assets/img/az-explore-1.webp" srcset="assets/img/az-explore-1.webp 1x, assets/img/az-explore-1@2x.webp 2x" width="598" height="655"
+               alt="A 3D UMAP of bone marrow cells colored by cell type.">
+        </div>
+        <figcaption class="scrolly-caption">AnnZarro: clicking a cell shows its distances to every other cell. Aging mouse bone marrow (Zenodo, CC BY 4.0).</figcaption>
+      </figure>
+      <ol class="scrolly-steps">
+        <li class="step" data-still="assets/img/az-explore-1.webp" data-still-2x="assets/img/az-explore-1@2x.webp" data-alt="A 3D UMAP of bone marrow cells colored by cell type.">
+          <h3>Cell types</h3>
+          <p>8,090 bone marrow cells from young, middle-aged and old mice in a 3D UMAP, colored by cell type. Stem and progenitor cells overlap at the left, neutrophils form the long arm, B cells sit at the right, and T and NK cells form the island at the top.</p>
+        </li>
+        <li class="step" data-still="assets/img/az-explore-2.webp" data-still-2x="assets/img/az-explore-2@2x.webp" data-alt="The same 3D UMAP colored by distance to a clicked stem cell: stem cells dark blue, mature cells grey.">
+          <h3>Click a stem cell</h3>
+          <p>Clicking a hematopoietic stem cell (red) colors every other cell by how far its expression is from the clicked cell. The nearest cells are other stem cells, and the progenitors beside them are nearer than any mature cell.</p>
+          <img class="step-still" src="assets/img/az-explore-2.webp" srcset="assets/img/az-explore-2.webp 1x, assets/img/az-explore-2@2x.webp 2x" width="598" height="655" loading="lazy" alt="The same 3D UMAP colored by distance to a clicked stem cell: stem cells dark blue, mature cells grey.">
+        </li>
+        <li class="step" data-still="assets/img/az-explore-3.webp" data-still-2x="assets/img/az-explore-3@2x.webp" data-alt="Distance to a clicked LMPP: most progenitors blue.">
+          <h3>A multipotent progenitor</h3>
+          <p>One click on, a lymphoid-primed multipotent progenitor (LMPP) is near much of the progenitor compartment at once.</p>
+          <img class="step-still" src="assets/img/az-explore-3.webp" srcset="assets/img/az-explore-3.webp 1x, assets/img/az-explore-3@2x.webp 2x" width="598" height="655" loading="lazy" alt="Distance to a clicked LMPP: most progenitors blue.">
+        </li>
+        <li class="step" data-still="assets/img/az-explore-4.webp" data-still-2x="assets/img/az-explore-4@2x.webp" data-alt="Distance to a clicked GMP: blue extends from the progenitors toward the monocyte progenitors.">
+          <h3>A granulocyte-monocyte progenitor</h3>
+          <p>For a GMP, the near cells reach down toward the monocyte progenitors.</p>
+          <img class="step-still" src="assets/img/az-explore-4.webp" srcset="assets/img/az-explore-4.webp 1x, assets/img/az-explore-4@2x.webp 2x" width="598" height="655" loading="lazy" alt="Distance to a clicked GMP: blue extends from the progenitors toward the monocyte progenitors.">
+        </li>
+        <li class="step" data-still="assets/img/az-explore-5.webp" data-still-2x="assets/img/az-explore-5@2x.webp" data-alt="Distance to a clicked monocyte: monocytes dark blue, stem cells grey.">
+          <h3>A monocyte</h3>
+          <p>For a monocyte, the nearest cells are other monocytes and their progenitors; the stem cells are now far.</p>
+          <img class="step-still" src="assets/img/az-explore-5.webp" srcset="assets/img/az-explore-5.webp 1x, assets/img/az-explore-5@2x.webp 2x" width="598" height="655" loading="lazy" alt="Distance to a clicked monocyte: monocytes dark blue, stem cells grey.">
+        </li>
+        <li class="step" data-still="assets/img/az-explore-6.webp" data-still-2x="assets/img/az-explore-6@2x.webp" data-alt="Distance to a clicked CLP: progenitors blue, the T and NK island faintly blue, neutrophils grey.">
+          <h3>A lymphoid progenitor</h3>
+          <p>For a common lymphoid progenitor (CLP), the near cells stay among the progenitors, and the T and NK island at the top turns faintly blue while the neutrophils stay grey.</p>
+          <img class="step-still" src="assets/img/az-explore-6.webp" srcset="assets/img/az-explore-6.webp 1x, assets/img/az-explore-6@2x.webp 2x" width="598" height="655" loading="lazy" alt="Distance to a clicked CLP: progenitors blue, the T and NK island faintly blue, neutrophils grey.">
+        </li>
+        <li class="step" data-still="assets/img/az-explore-7.webp" data-still-2x="assets/img/az-explore-7@2x.webp" data-alt="Distance to a clicked erythroid progenitor: the erythroid tip dark blue.">
+          <h3>An erythroid progenitor</h3>
+          <p>For an erythroid progenitor, the nearest cells form the erythroid tip of the progenitor compartment.</p>
+          <img class="step-still" src="assets/img/az-explore-7.webp" srcset="assets/img/az-explore-7.webp 1x, assets/img/az-explore-7@2x.webp 2x" width="598" height="655" loading="lazy" alt="Distance to a clicked erythroid progenitor: the erythroid tip dark blue.">
+        </li>
+      </ol>
+    </div>
+    <p class="small muted prose">Distance is Euclidean in the first 30 principal components of gene expression, with near cells dark blue; the red dot is the clicked cell. Data: CITE-seq of mouse bone marrow across aging, <a href="https://doi.org/10.5281/zenodo.15587768">doi:10.5281/zenodo.15587768</a> (CC BY 4.0). Frames exported with AnnZarro 0.7.5; the view turns a few degrees per step to show its 3D shape.</p>
+
+    <h2>Genomics</h2>
+    <div class="grid grid-2">
+      <article class="card" id="twoforone">
+        <p class="kicker">Lead developer</p>
+        <h3>2for1separator</h3>
+        <p>Deconvolution of active and repressive chromatin signals profiled together by CUT&amp;Tag2for1. Each signal is modeled as a continuous function along the genome, so neighboring positions share information, and inference runs as massively parallel variational inference. Developed with the Henikoff laboratory.</p>
+        <p class="small">Paper: <a href="https://doi.org/10.1186/s13059-022-02642-w"><em>Genome Biology</em>, 2022</a> (co-first author)</p>
+        <div class="sw-links">
+          <a href="https://github.com/settylab/2for1separator">GitHub</a>
+          <a href="https://2for1separator.readthedocs.io">Documentation</a>
+          <a href="https://doi.org/10.5281/zenodo.5498376">doi:10.5281/zenodo.5498376</a>
+        </div>
+      </article>
+      <article class="card" id="kdpeak">
+        <p class="kicker">Lead developer, with Manu Setty</p>
+        <h3>kdpeak</h3>
+        <p>Genomic peak calling by kernel density estimation.</p>
+        <p class="small">Install: <code class="install">pip install kdpeak</code></p>
+        <div class="sw-links">
+          <a href="https://github.com/settylab/kdpeak">GitHub</a>
+          <a href="https://pypi.org/project/kdpeak/">PyPI</a>
+          <a href="https://doi.org/10.5281/zenodo.8200403">doi:10.5281/zenodo.8200403</a>
+        </div>
+      </article>
+    </div>
+
+    <h2 id="agents">Infrastructure for AI agents in research</h2>
+    <p class="prose">These tools let teams of AI coding agents run analyses on shared computing clusters under the operator's control, with independent re-checks of their results and every result and decision documented. Since April 2026 they have run more than 4,000 agent tasks and 5,000 cluster jobs for my research. <a href="ai.html">How the agents are run and checked</a>.</p>
+    <div class="grid grid-2">
+      <article class="card">
+        <p class="kicker">Developer &middot; MIT license</p>
+        <h3>agent_sandbox</h3>
+        <p>Kernel-enforced sandboxing for AI coding agents on shared HPC clusters. The operator controls which files and credentials agents can reach, and Slurm jobs that agents submit stay sandboxed. Released through Homebrew, with continuous integration and documentation.</p>
+        <div class="sw-links">
+          <a href="https://github.com/katosh/agent_sandbox">GitHub</a>
+          <a href="https://katosh.github.io/agent_sandbox/">Documentation</a>
+        </div>
+      </article>
+      <article class="card">
+        <p class="kicker">Developer &middot; MIT license</p>
+        <h3>Nexus</h3>
+        <p>Orchestration of teams of coding agents from GitHub issues, with independent re-checks of results and every result and decision documented. Public and documented; shipped disabled by design, to be enabled deliberately by each group that adopts it.</p>
+        <div class="sw-links">
+          <a href="https://github.com/katosh/nexus">GitHub</a>
+          <a href="https://katosh.github.io/nexus/">Documentation</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER:START -->
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; <span id="year">2026</span> Dominik J. Otto. Postdoctoral Fellow, Fred Hutchinson Cancer Center, Seattle.</p>
+    <nav aria-label="Profiles">
+      <a href="https://github.com/katosh">GitHub</a>
+      <a href="https://orcid.org/0000-0002-6116-053X">ORCID</a>
+      <a href="https://scholar.google.com/citations?user=ujPYhPMAAAAJ">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/dominikotto/">LinkedIn</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</footer>
+<!-- FOOTER:END -->
+</body>
+</html>

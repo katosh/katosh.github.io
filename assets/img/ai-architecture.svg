@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="1000" height="600" role="img" aria-labelledby="t d">
+<title id="t">How Nexus and agent_sandbox run a task</title>
+<desc id="d">The researcher files a task as a GitHub issue. Inside agent_sandbox, an orchestrator agent spawns a worker agent for the task and, for results that matter, an independent skeptic agent that re-derives the result and returns a verdict: credible, check, suspect or refuted. Slurm jobs from the sandbox pass through a chaperon and run sandboxed on the compute nodes. Every agent files a report, and the record is linked on the issue.</desc>
+<defs>
+  <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#565d64"/></marker>
+  <style>
+    text { font-family: ui-sans-serif, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #1d2125; }
+    .h { font-size: 17px; font-weight: 700; }
+    .b { font-size: 13.5px; fill: #3b4247; }
+    .s { font-size: 12.5px; fill: #565d64; }
+    .lab { font-size: 12.5px; fill: #565d64; font-style: italic; }
+    .box { fill: #ffffff; stroke: #9aa3a8; stroke-width: 1.4; }
+    .agent { fill: #ffffff; stroke: #0f6b6e; stroke-width: 1.8; }
+    .ln { fill: none; stroke: #565d64; stroke-width: 1.6; }
+    .pill { font-size: 11.5px; font-weight: 600; }
+  </style>
+</defs>
+
+<!-- researcher and issues -->
+<rect class="box" x="20" y="40" width="175" height="80" rx="8"/>
+<text class="h" x="36" y="68">Researcher</text>
+<text class="b" x="36" y="90">sets each task, reads</text>
+<text class="b" x="36" y="108">results, decides</text>
+
+<rect class="box" x="20" y="150" width="175" height="80" rx="8"/>
+<text class="h" x="36" y="178">GitHub issues</text>
+<text class="b" x="36" y="200">one thread per task,</text>
+<text class="b" x="36" y="218">results posted there</text>
+<path class="ln" d="M107 120V148" marker-end="url(#a)" marker-start="url(#a)"/>
+
+<!-- sandbox -->
+<rect x="240" y="40" width="520" height="420" rx="14" fill="#eef5f4" stroke="#0f6b6e" stroke-width="2" stroke-dasharray="7 5"/>
+<text class="h" x="262" y="72" fill="#0a5153">agent_sandbox</text>
+<text class="s" x="262" y="94">writes confined to the project; the operator chooses which credentials agents reach</text>
+
+<rect class="agent" x="270" y="150" width="170" height="80" rx="8"/>
+<text class="h" x="286" y="178">Orchestrator</text>
+<text class="b" x="286" y="200">agent (Nexus): triages,</text>
+<text class="b" x="286" y="218">spawns agents</text>
+
+<rect class="agent" x="496" y="142" width="160" height="80" rx="8" opacity=".45"/>
+<rect class="agent" x="488" y="146" width="160" height="80" rx="8" opacity=".7"/>
+<rect class="agent" x="480" y="150" width="160" height="80" rx="8"/>
+<text class="h" x="496" y="178">Worker agents</text>
+<text class="b" x="496" y="200">one task each: code,</text>
+<text class="b" x="496" y="218">analyses, report</text>
+<path class="ln" d="M440 190H478" marker-end="url(#a)"/>
+
+<rect class="agent" x="480" y="310" width="160" height="80" rx="8"/>
+<text class="h" x="496" y="338">Skeptic agents</text>
+<text class="b" x="496" y="360">independent re-check:</text>
+<text class="b" x="496" y="378">re-derive, try to refute</text>
+<path class="ln" d="M560 230V308" marker-end="url(#a)"/>
+<text class="lab" x="568" y="275">result</text>
+<path class="ln" d="M405 230L478 322" marker-end="url(#a)"/>
+<text class="lab" x="450" y="262">spawns</text>
+
+<!-- verdicts -->
+<g transform="translate(480 402)">
+  <rect width="62" height="22" rx="11" fill="#e2efee"/><text class="pill" x="31" y="15" text-anchor="middle" fill="#0a5153">credible</text>
+  <rect x="66" width="48" height="22" rx="11" fill="#ecebe6"/><text class="pill" x="90" y="15" text-anchor="middle" fill="#3b4247">check</text>
+  <rect x="118" width="62" height="22" rx="11" fill="#f6e3d8"/><text class="pill" x="149" y="15" text-anchor="middle" fill="#8a3a17">suspect</text>
+  <rect x="184" width="62" height="22" rx="11" fill="#b4532a"/><text class="pill" x="215" y="15" text-anchor="middle" fill="#ffffff">refuted</text>
+</g>
+
+<!-- chaperon and compute -->
+<rect class="box" x="700" y="150" width="120" height="80" rx="8" stroke="#0f6b6e" stroke-width="1.8"/>
+<text class="h" x="714" y="178">Chaperon</text>
+<text class="b" x="714" y="200">checks every</text>
+<text class="b" x="714" y="218">Slurm job</text>
+<path class="ln" d="M640 190H698" marker-end="url(#a)"/>
+<text class="lab" x="662" y="212">jobs</text>
+
+<rect class="box" x="850" y="140" width="135" height="100" rx="8"/>
+<text class="h" x="864" y="168">Compute</text>
+<text class="h" x="864" y="188">nodes</text>
+<text class="b" x="864" y="210">jobs run</text>
+<text class="b" x="864" y="228">sandboxed too</text>
+<path class="ln" d="M820 190H848" marker-end="url(#a)"/>
+
+<!-- record -->
+<rect class="box" x="300" y="500" width="400" height="76" rx="8"/>
+<text class="h" x="318" y="528">The record</text>
+<text class="b" x="318" y="550">a report from every agent; results and decisions</text>
+<text class="b" x="318" y="568">documented in reports, websites and writeups</text>
+<path class="ln" d="M355 230V498" marker-end="url(#a)"/>
+<path class="ln" d="M600 426V498" marker-end="url(#a)"/>
+<text class="lab" x="608" y="470">verdicts</text>
+<text class="lab" x="363" y="300">reports</text>
+<path class="ln" d="M300 538H107V232" marker-end="url(#a)"/>
+<text class="lab" x="118" y="530">linked on the issue</text>
+<path class="ln" d="M195 190H268" marker-end="url(#a)"/>
+<text class="lab" x="204" y="180">task</text>
+</svg>

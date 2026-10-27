@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research | Dominik J. Otto</title>
+<meta name="description" content="Research of Dominik J. Otto: cell states as a continuum, the guardrails of cell identity, and published methods (Mellon, Kompot, 2for1separator) that represent a tissue as a distribution of cell states.">
+<meta name="author" content="Dominik J. Otto">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111416" media="(prefers-color-scheme: dark)">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-UGD8TD5S4NwaPHB6+f7hoa4Rsti+CuU7B2qfrtpLj6g='; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<link rel="canonical" href="https://katosh.github.io/research.html">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dominik J. Otto">
+<meta property="og:title" content="Research: the guardrails of cell identity">
+<meta property="og:description" content="What keeps cells in the states a healthy tissue needs, what releases them, and can we learn that regulation well enough to write it?">
+<meta property="og:url" content="https://katosh.github.io/research.html">
+<meta property="og:image" content="https://katosh.github.io/assets/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="assets/seq/gastrulation/gastrulation-scrolly.css">
+<link rel="stylesheet" href="assets/seq/waddington/waddington-figure.css">
+<link rel="stylesheet" href="assets/seq/twoforone/twoforone-figure.css">
+<script src="assets/seq/gastrulation/gastrulation-scrolly.js" defer></script>
+<script src="assets/seq/waddington/waddington-figure.js" defer></script>
+<script src="assets/seq/twoforone/twoforone-figure.js" defer></script>
+<script src="assets/js/kompot-compare.js" defer></script>
+<script src="js/site.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Research program",
+  "url": "https://katosh.github.io/research.html",
+  "about": { "@id": "https://katosh.github.io/#person" },
+  "author": { "@type": "Person", "@id": "https://katosh.github.io/#person", "name": "Dominik J. Otto" }
+}
+</script>
+</head>
+<body>
+<!-- HEADER:START -->
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" data-open="false">
+  <div class="wrap">
+    <a class="brand" href="index.html">Dominik J. Otto</a>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="research.html" aria-current="page">Research</a>
+      <a href="software.html">Software</a>
+      <a href="ai.html">AI</a>
+      <a href="publications.html">Publications</a>
+      <a href="talks.html">Talks</a>
+      <a href="teaching.html">Teaching &amp; service</a>
+      <a href="cv.pdf">CV</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="icon-btn theme-toggle" type="button" aria-label="Switch theme"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    <button class="icon-btn nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+<!-- HEADER:END -->
+
+<main id="main">
+
+<section class="page-head">
+  <div class="wrap">
+    <h1>Research</h1>
+    <p class="question">What keeps cells in the states a healthy tissue needs, what releases them, and can we learn that regulation well enough to write it?</p>
+    <div class="prose">
+      <p>A cell's expression can change in as many directions as it has genes, yet healthy cells use only a few of them. The states they occupy form a thin sheet through this space of thousands of dimensions, and the directions off that sheet far outnumber those along it. Healthy cells rarely take those directions, because transcription factors, enhancers, chromatin and signals from neighbors pull cells back when they stray. These are the guardrails of cell identity. When one is removed, identity gives way: deleting Pax5 lets committed B cells dedifferentiate and become T cells, and deleting Bcl11b turns committed T cells into cells resembling natural killer cells. Mutations, inflammation and drugs push cells off the sheet, and the guardrails decide whether they return or drift toward disease.</p>
+      <p>Clusters, trajectories, RNA velocity and virtual-cell models learn from where observed cells are, and so see the few directions cells change along and little of the many in which identity is defended and lost. Noise pushes cells off the sheet as readily as along it, so a sheet that stays thin is itself evidence of regulation pulling them back.</p>
+      <p>Understanding this regulation would identify the small set of regulators that determine how a tissue behaves and how it departs from homeostasis in disease, the candidates for monitoring and intervention. The questions my future laboratory will ask are listed under <a href="index.html#future">future directions</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="foundations">
+  <div class="wrap">
+    <h2>Foundations: representing a tissue as a whole</h2>
+    <p class="prose">My work so far builds layers of one representation of a tissue: the distribution of its cell states, a comparison of conditions on every state, the spatial organization of those states, and, from earlier work, regulation along the genome.</p>
+    <div class="grid grid-2">
+      <article class="card span-2" id="mellon-block">
+        <h3>The distribution of cell states</h3>
+        <p>Mellon, which I developed as first author, infers a tissue's distribution of cell states as a smooth, differentiable density from millions of cells, with uncertainty. With it we found that new lineages often emerge through sparsely populated transitions: B-lineage commitment in human hematopoiesis passes a low-density window in which enhancers are primed and EBF1 activates, and the regenerating lung restores its distribution of cell states after injury. Mellon is integrated into Palantir, an scverse ecosystem package.</p>
+        <figure class="narrow-figure">
+          <div class="figure-panel">
+            <img src="assets/img/mellon-bcell-ebf1-dynamics.webp" srcset="assets/img/mellon-bcell-ebf1-dynamics.webp 1x, assets/img/mellon-bcell-ebf1-dynamics@2x.webp 2x" width="900" height="581" loading="lazy"
+                 alt="Two panels along the B-cell lineage: log density is high, then low, then high again; EBF1 local variability peaks in the low-density window.">
+          </div>
+          <figcaption>Human B-lineage commitment. Cells ordered along the lineage pass from high to low and back to high density (top); in the low-density window, EBF1 expression varies most between neighboring cells (bottom). Otto et al., <em>Nature Methods</em> 2024.</figcaption>
+        </figure>
+        <p>Where cells accumulate, the density forms valleys when drawn as a landscape: a measured version of Waddington's landscape, in which common states are the valleys that cells settle into.</p>
+        <figure class="wdf" data-wdf data-base="assets/seq/waddington/">
+          <div class="wdf-pair">
+            <div class="wdf-panel">
+              <img src="assets/seq/waddington/poster-density.webp" width="640" height="360" loading="lazy"
+                   alt="A smooth surface whose height is cell-state density, with cells as dots; the tallest peak is where most cells sit.">
+              <canvas data-seq="density" width="640" height="360" aria-hidden="true"></canvas>
+              <p class="wdf-label">Where cells accumulate</p>
+            </div>
+            <div class="wdf-panel">
+              <img src="assets/seq/waddington/poster-landscape.webp" width="640" height="360" loading="lazy"
+                   alt="The same states drawn as a landscape of valleys and ridges; the cells collect in the deepest valley.">
+              <canvas data-seq="landscape" width="640" height="360" aria-hidden="true"></canvas>
+              <p class="wdf-label">The same states as a landscape</p>
+            </div>
+          </div>
+          <figcaption>Where cells accumulate, the landscape has valleys: a picture of the states a tissue holds, and of what keeps cells in them. Illustration.</figcaption>
+        </figure>
+        <p>Because Mellon's density can be continuous in time, it shows how a developing tissue's distribution of states shifts between, and not only at, the sampled stages.</p>
+        <section class="tsd" data-tsd-scrolly data-base="assets/seq/gastrulation/" data-frames="41" data-e-start="6.5" data-e-end="8.5" aria-labelledby="tsd-title">
+          <h3 id="tsd-title" class="visually-hidden">Cell-state density as a function of time: mouse gastrulation</h3>
+          <div class="tsd-stage">
+            <div class="tsd-inner">
+              <figure class="tsd-figure">
+                <div class="tsd-card">
+                  <img class="tsd-poster" src="assets/seq/gastrulation/poster.webp" width="1200" height="720" loading="lazy"
+                       alt="Two maps of all cells from mouse gastrulation at embryonic day 7.5: left, the rate at which the density of each cell state changes over time (growth red, decay blue); right, the cell-state density (low blue, high red); a timeline from E6.5 to E8.5 below.">
+                  <canvas class="tsd-canvas" width="1200" height="720" role="img"
+                          aria-label="The same two maps, advancing from E6.5 to E8.5 as the page scrolls."></canvas>
+                  <p class="tsd-readout" aria-hidden="true">E7.50</p>
+                </div>
+                <figcaption>Mellon's time-continuous cell-state density in mouse gastrulation, E6.5 to E8.5: one density fitted across all nine sampled stages and evaluated at any time in between. Right, the density of each cell state; left, its rate of change (growth red, decay blue), both on a two-dimensional layout of all cells. From Supplementary Video 1 of the Mellon paper; scrolling moves through developmental time. Data: Pijuan-Sala et al., <em>Nature</em> 2019. Analysis: Otto et al., <em>Nature Methods</em> 2024.</figcaption>
+              </figure>
+            </div>
+          </div>
+          <ol class="tsd-steps">
+            <li class="tsd-step" data-e-from="6.5">
+              <h3>E6.5 to E7.5: a growth phase</h3>
+              <p>The first phase of gastrulation is dominated by growth (red): epiblast and primitive streak cells stay at a nearly constant abundance, in line with their high proliferation.</p>
+            </li>
+            <li class="tsd-step" data-e-from="7.5">
+              <h3>E7.5: a sharp transition</h3>
+              <p>Around E7.5 the epiblast and primitive streak states decline rapidly (blue), which marks the completion of gastrulation, while later lineages such as blood keep gaining density.</p>
+            </li>
+            <li class="tsd-step" data-e-from="8.3">
+              <h3>E8.4: a second transition</h3>
+              <p>Near E8.4 ectodermal and endodermal structures emerge and their progenitors decline. Because the density is continuous in time, such transitions can be placed between the sampled stages.</p>
+            </li>
+          </ol>
+        </section>
+        <p class="small"><a href="https://doi.org/10.1038/s41592-024-02302-w"><em>Nature Methods</em>, 2024</a></p>
+      </article>
+      <article class="card">
+        <h3>Comparing conditions without clusters</h3>
+        <p>Kompot, which I conceived, performs cluster-free differential expression: it compares conditions cell by cell on the continuum of cell states, for differential expression and abundance, without assigning cells to clusters or neighborhoods, and was the most precise of ten methods in five benchmark scenarios. In aging mouse bone marrow, age-associated change proved small in aggregate but structured across cell states, some of it confined to part of one cell type.</p>
+        <figure>
+          <div class="figure-panel">
+            <img src="assets/img/kompot-aging-foldchange.webp" srcset="assets/img/kompot-aging-foldchange.webp 1x, assets/img/kompot-aging-foldchange@2x.webp 2x" width="1000" height="965" loading="lazy"
+                 alt="For the genes H2-Q7, Mef2c and Dynll1, three embeddings of mouse bone marrow cells: smoothed expression in young mice, the young-to-old log fold change per cell, and smoothed expression in old mice.">
+          </div>
+          <figcaption>Aging mouse bone marrow. For three genes: expression in young mice (left), the change with age at every cell (middle) and expression in old mice (right). Mef2c changes only in parts of cell types. Otto et al., bioRxiv (2025), under review at <em>Cell Systems</em>; CC BY 4.0.</figcaption>
+        </figure>
+        <p class="small"><a href="https://doi.org/10.1101/2025.06.03.657769">bioRxiv, under review at <em>Cell Systems</em></a></p>
+      </article>
+      <article class="card">
+        <h3>Regulation along the genome</h3>
+        <p>With Steven Henikoff's laboratory I co-designed the statistical inference that separates two chromatin profiles, the accessible and the silenced regulome, from one CUT&amp;Tag2for1 experiment in single cells. 2for1separator treats chromatin as a continuous signal along the genome, the choice I later made for cell states. The separated profiles match those of experiments with a single antibody.</p>
+        <figure class="tfo" data-tfo>
+          <div class="tfo-card">
+            <img src="assets/seq/twoforone/step1.webp" width="1600" height="1167" loading="lazy" alt="" data-step="Cells, and chromatin with two marks of interest: RNA polymerase II (Pol2S5p) at active sites and H3K27me3 at silenced ones.">
+            <img src="assets/seq/twoforone/step2.webp" width="1600" height="1167" loading="lazy" alt="" data-step="One experiment, two antibodies: each binds one of the two marks.">
+            <img src="assets/seq/twoforone/step3.webp" width="1600" height="1167" loading="lazy" alt="" data-step="The Tn5 enzyme, tethered to the antibodies, cuts the DNA next to each mark.">
+            <img src="assets/seq/twoforone/step4.webp" width="1600" height="1167" loading="lazy" alt="" data-step="The cuts release short fragments at Pol2 and longer, nucleosome-wrapped fragments at H3K27me3.">
+            <img src="assets/seq/twoforone/step5.webp" width="1600" height="1167" loading="lazy" alt="" data-step="So each mark has its own typical fragment lengths, but no read says which mark it came from.">
+            <img class="tfo-final" src="assets/seq/twoforone/step6.webp" width="1600" height="1167" loading="lazy" data-step="Along the genome, the cuts of both marks mix; 2for1separator uses where fragments of each length co-occur to separate the two signals in every cell."
+                 alt="CUT&amp;Tag2for1 cartoon: cells; chromatin with RNA polymerase II and an H3K27me3-marked nucleosome, each bound by its own antibody and cut by tethered Tn5; short fragments come from polymerase sites and long ones from H3K27me3; an inset shows the two marks' different fragment-length distributions; along the genome, cut density is coloured by fragment length.">
+          </div>
+          <p class="tfo-step" aria-live="polite"></p>
+          <figcaption>CUT&amp;Tag2for1 profiles an active and a silenced chromatin mark in the same cells in one experiment; 2for1separator separates the two signals. Janssens*, Otto* et al., <em>Genome Biology</em> 2022 (CC BY 4.0).</figcaption>
+        </figure>
+        <figure>
+          <div class="figure-panel">
+            <img src="assets/img/twoforone-tracks.webp" srcset="assets/img/twoforone-tracks.webp 1x, assets/img/twoforone-tracks@2x.webp 2x" width="1000" height="458" loading="lazy"
+                 alt="Genome tracks: the mixed CUT&amp;Tag2for1 signal, single-antibody profiles of RNA polymerase II and H3K27me3, and the two tracks separated by 2for1separator, which match the single-antibody profiles.">
+          </div>
+          <figcaption>Separated tracks match single-antibody controls. Janssens*, Otto* et al., <em>Genome Biology</em> 2022 (CC BY 4.0).</figcaption>
+        </figure>
+        <p class="small"><a href="https://doi.org/10.1186/s13059-022-02642-w"><em>Genome Biology</em>, 2022</a> (co-first author)</p>
+      </article>
+      <article class="card">
+        <h3>Prostate cancer genomics</h3>
+        <p>My doctoral work at Universität Leipzig and the Fraunhofer Institute for Cell Therapy and Immunology produced ProstaTrend, a genomic risk score for aggressive prostate cancer validated in independent cohorts, and two patent filings on which I am co-inventor. My dissertation was on computational gene expression deconvolution.</p>
+        <p class="small"><a href="https://doi.org/10.1016/j.eururo.2020.06.001"><em>European Urology</em>, 2020</a> (co-first author)</p>
+      </article>
+    </div>
+
+    <h3 id="kompot-how">How Kompot compares two conditions</h3>
+    <!-- Scroll-driven figure 2 of 2: the kompot-compare module (assets/js/), stepped by scrolling (js/site.js). -->
+    <div class="scrolly" data-scrolly>
+      <figure class="scrolly-graphic">
+        <div class="figure-panel themed">
+          <canvas class="anim-kompot" data-scroll-anim="kompot-compare" data-seed="3" role="img"
+                  aria-label="Illustration: expression of one gene along cell states in two conditions, as noisy measurements, then smooth functions with uncertainty bands, then the difference at every state, highlighted where it exceeds the uncertainty."></canvas>
+        </div>
+        <figcaption class="scrolly-caption">Illustration with synthetic data, not a measurement.</figcaption>
+      </figure>
+      <ol class="scrolly-steps">
+        <li class="step">
+          <h3>Sparse, noisy measurements</h3>
+          <p>In each condition, single-cell measurements of a gene are noisy, and in many cells the gene drops out entirely.</p>
+        </li>
+        <li class="step">
+          <h3>A smooth function of cell state</h3>
+          <p>For each condition, Kompot learns expression as a smooth function of cell state, a Gaussian process that shares information between similar states.</p>
+        </li>
+        <li class="step">
+          <h3>Its uncertainty</h3>
+          <p>Each function carries its posterior uncertainty, which widens where few cells inform it.</p>
+        </li>
+        <li class="step">
+          <h3>The change at every cell state</h3>
+          <p>The difference between conditions is computed at every cell state, and a change stands out where it exceeds the uncertainty. No clusters are needed, so a change confined to part of a cell type stays visible.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="principles">
+  <div class="wrap prose">
+    <h2>Machine learning that can be checked</h2>
+    <p>Three principles carry through my work. First, every prediction comes with its uncertainty, so a supported result can be told apart from an extrapolation, and the uncertainty shows where the data are thin. Second, what my models learn on the way to a prediction, such as a density of cell states or a change in expression at every state, is a biological quantity that can be measured and tested directly. Third, AI agents help build and check the models, but they are not the scientific model; the models themselves use modern machine learning where it serves the question, and their parts stay measurable. Every decision and result the agents produce is documented with its evidence, so each step can be reproduced and audited.</p>
+    <p>For the third, I built <a href="ai.html">agent_sandbox and Nexus</a>, open tools that run sandboxed teams of AI agents on shared computing clusters, with independent re-checks of their results.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER:START -->
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; <span id="year">2026</span> Dominik J. Otto. Postdoctoral Fellow, Fred Hutchinson Cancer Center, Seattle.</p>
+    <nav aria-label="Profiles">
+      <a href="https://github.com/katosh">GitHub</a>
+      <a href="https://orcid.org/0000-0002-6116-053X">ORCID</a>
+      <a href="https://scholar.google.com/citations?user=ujPYhPMAAAAJ">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/dominikotto/">LinkedIn</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</footer>
+<!-- FOOTER:END -->
+</body>
+</html>

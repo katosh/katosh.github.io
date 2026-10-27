@@ -1,0 +1,21 @@
+/*
+ * twoforone-figure.css: CUT&Tag2for1 build sequence (6 steps) for the 2for1separator block.
+ * In place, no pinning: the step shown follows the figure's position as it scrolls past.
+ * Light card in every theme. No inline styles (CSP). Without JS / reduced motion: final step.
+ */
+.tfo { margin: 1.25rem 0; }
+.tfo-card {
+  position: relative; aspect-ratio: 1600 / 1167; border-radius: 10px; overflow: hidden;
+  background: #fff; border: 1px solid var(--rule, #dcd8cf);
+}
+.tfo-card img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; opacity: 0; transition: opacity .3s ease; }
+.tfo-card img.tfo-final { opacity: 1; }
+.tfo-step {
+  margin: 8px 0 0; font-size: .85rem; line-height: 1.4; color: var(--text, #1d2125); min-height: 1.4em; display: none;
+}
+.tfo-step b { color: var(--accent, #0f6b6e); font-weight: 600; }
+.tfo figcaption { font-size: .82rem; line-height: 1.45; color: var(--text-muted, #565d64); margin-top: 6px; }
+.tfo.tfo-live .tfo-card img { opacity: 0; }
+.tfo.tfo-live .tfo-card img.is-active { opacity: 1; }
+.tfo.tfo-live .tfo-step { display: block; }
+@media (prefers-reduced-motion: reduce) { .tfo-card img { transition: none; } }

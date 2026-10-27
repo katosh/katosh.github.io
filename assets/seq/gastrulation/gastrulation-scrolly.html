@@ -1,0 +1,40 @@
+<!--
+  Mellon's time-continuous cell-state density in mouse gastrulation, scrubbed by scroll
+  (scroll position = embryonic day, E6.5 to E8.5). For the Research page, Foundations,
+  "The distribution of cell states" (Mellon) block. Include once, with
+    <link rel="stylesheet" href="assets/seq/gastrulation/gastrulation-scrolly.css">
+    <script src="assets/seq/gastrulation/gastrulation-scrolly.js" defer></script>
+  No inline styles or scripts (CSP). Paths assume the site root; change data-base otherwise.
+  Data: Pijuan-Sala et al., Nature 2019 (public). Analysis: Otto et al., Nature Methods 2024.
+-->
+<section class="tsd" data-tsd-scrolly data-base="assets/seq/gastrulation/" data-frames="41" data-e-start="6.5" data-e-end="8.5" aria-labelledby="tsd-title">
+  <h3 id="tsd-title" class="visually-hidden">Cell-state density as a function of time: mouse gastrulation</h3>
+  <div class="tsd-stage">
+    <div class="tsd-inner">
+      <figure class="tsd-figure">
+        <div class="tsd-card">
+          <img class="tsd-poster" src="assets/seq/gastrulation/poster.webp" width="1200" height="720" loading="lazy"
+               alt="Two maps of all cells from mouse gastrulation at embryonic day 7.5: left, the rate at which the density of each cell state changes over time (growth red, decay blue); right, the cell-state density (low blue, high red); a timeline from E6.5 to E8.5 below.">
+          <canvas class="tsd-canvas" width="1200" height="720" role="img"
+                  aria-label="The same two maps, advancing from E6.5 to E8.5 as the page scrolls."></canvas>
+          <p class="tsd-readout" aria-hidden="true">E7.50</p>
+        </div>
+        <figcaption>Mellon's time-continuous cell-state density in mouse gastrulation, E6.5 to E8.5: one density fitted across all nine sampled stages and evaluated at any time in between. Right, the density of each cell state; left, its rate of change (growth red, decay blue), both on a two-dimensional layout of all cells. From Supplementary Video 1 of the Mellon paper; scrolling moves through developmental time. Data: Pijuan-Sala et al., <em>Nature</em> 2019. Analysis: Otto et al., <em>Nature Methods</em> 2024.</figcaption>
+      </figure>
+    </div>
+  </div>
+  <ol class="tsd-steps">
+    <li class="tsd-step" data-e-from="6.5">
+      <h3>E6.5 to E7.5: a growth phase</h3>
+      <p>The first phase of gastrulation is dominated by growth (red): epiblast and primitive streak cells stay at a nearly constant abundance, in line with their high proliferation.</p>
+    </li>
+    <li class="tsd-step" data-e-from="7.5">
+      <h3>E7.5: a sharp transition</h3>
+      <p>Around E7.5 the epiblast and primitive streak states decline rapidly (blue), which marks the completion of gastrulation, while later lineages such as blood keep gaining density.</p>
+    </li>
+    <li class="tsd-step" data-e-from="8.3">
+      <h3>E8.4: a second transition</h3>
+      <p>Near E8.4 ectodermal and endodermal structures emerge and their progenitors decline. Because the density is continuous in time, such transitions can be placed between the sampled stages.</p>
+    </li>
+  </ol>
+</section>

@@ -1,0 +1,21 @@
+/*
+ * waddington-figure.css: compact Direction 1 figure for the text column. The density and the
+ * same density as a landscape, side by side, turning together as the figure scrolls past
+ * (scrubbed by its own position; nothing pins). Pairs with waddington-figure.js / .html.
+ * No inline styles (CSP). Without JS or with prefers-reduced-motion: the two posters.
+ */
+.wdf { margin: 1.5rem 0; }
+.wdf-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.wdf-panel {
+  position: relative; margin: 0; aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden;
+  border: 1px solid var(--rule, #dcd8cf); background: #4a4a4a;
+}
+.wdf-panel img, .wdf-panel canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.wdf-panel canvas { display: none; }
+.wdf-label {
+  position: absolute; left: 8px; top: 6px; margin: 0; padding: 2px 7px; border-radius: 6px;
+  font-size: .75rem; line-height: 1.35; background: rgba(255, 255, 255, .88); color: #1d2125;
+}
+.wdf figcaption { font-size: .82rem; line-height: 1.45; color: var(--text-muted, #565d64); margin-top: 8px; }
+.wdf.wdf-live .wdf-panel canvas { display: block; }
+@media (max-width: 520px) { .wdf-pair { grid-template-columns: 1fr; } }

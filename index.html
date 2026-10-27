@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dominik J. Otto | Computational biology of cell states</title>
+<meta name="description" content="Dominik J. Otto develops machine learning that represents a tissue as a continuous distribution of cell states, learned from millions of single cells, to find the regulation that holds cells in their states. Postdoctoral Fellow at Fred Hutch; NIH K99/R00 awardee.">
+<meta name="author" content="Dominik J. Otto">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111416" media="(prefers-color-scheme: dark)">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-UGD8TD5S4NwaPHB6+f7hoa4Rsti+CuU7B2qfrtpLj6g='; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<link rel="canonical" href="https://katosh.github.io/">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Dominik J. Otto">
+<meta property="og:title" content="Dominik J. Otto: the regulation that holds cells in their states">
+<meta property="og:description" content="Probabilistic machine learning for single-cell and spatial genomics: the tissue as a continuous distribution of cell states, with stated uncertainty.">
+<meta property="og:url" content="https://katosh.github.io/">
+<meta property="og:image" content="https://katosh.github.io/assets/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Dominik Otto, Setty Lab, Fred Hutch, next to a cell-state density surface">
+<meta property="profile:first_name" content="Dominik">
+<meta property="profile:last_name" content="Otto">
+<meta name="twitter:card" content="summary_large_image">
+<script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="css/site.css">
+<script src="js/site.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://katosh.github.io/#person",
+  "name": "Dominik J. Otto",
+  "givenName": "Dominik",
+  "additionalName": "Jenz",
+  "familyName": "Otto",
+  "honorificSuffix": "PhD",
+  "url": "https://katosh.github.io/",
+  "image": "https://katosh.github.io/img/profile@2x.webp",
+  "jobTitle": "Postdoctoral Fellow",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Fred Hutchinson Cancer Center",
+    "url": "https://www.fredhutch.org/",
+    "department": { "@type": "Organization", "name": "Basic Sciences Division" }
+  },
+  "affiliation": { "@type": "Organization", "name": "Setty Lab, Fred Hutchinson Cancer Center", "url": "https://settylab.org" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Universität Leipzig" },
+    { "@type": "CollegeOrUniversity", "name": "Freie Universität Berlin" }
+  ],
+  "award": "NIH K99/R00 Pathway to Independence Award (NIGMS)",
+  "knowsAbout": [
+    "Computational biology", "Single-cell genomics", "Spatial transcriptomics",
+    "Bayesian inference", "Gaussian processes", "Machine learning",
+    "Cell-state dynamics", "Hematopoiesis", "Regulatory genomics"
+  ],
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "ORCID",
+    "value": "0000-0002-6116-053X"
+  },
+  "sameAs": [
+    "https://orcid.org/0000-0002-6116-053X",
+    "https://scholar.google.com/citations?user=ujPYhPMAAAAJ",
+    "https://github.com/katosh",
+    "https://www.linkedin.com/in/dominikotto/"
+  ],
+  "address": { "@type": "PostalAddress", "addressLocality": "Seattle", "addressRegion": "WA", "addressCountry": "US" }
+}
+</script>
+</head>
+<body>
+<!-- HEADER:START -->
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" data-open="false">
+  <div class="wrap">
+    <a class="brand" href="index.html">Dominik J. Otto</a>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="research.html">Research</a>
+      <a href="software.html">Software</a>
+      <a href="ai.html">AI</a>
+      <a href="publications.html">Publications</a>
+      <a href="talks.html">Talks</a>
+      <a href="teaching.html">Teaching &amp; service</a>
+      <a href="cv.pdf">CV</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="icon-btn theme-toggle" type="button" aria-label="Switch theme"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    <button class="icon-btn nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+<!-- HEADER:END -->
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap prose">
+    <p class="eyebrow">Computational biology &middot; Fred Hutchinson Cancer Center</p>
+    <h1>Learning the regulation that holds cells in the states a healthy tissue needs</h1>
+    <p class="lede">I develop machine learning that treats a tissue as a whole: a continuous distribution of cell states, learned from millions of single cells, with the uncertainty of every estimate stated. My aim is to understand the regulation that keeps each state in place and how it fails in aging and cancer.</p>
+    <div class="hero-id">
+      <img class="profile" src="img/profile.webp" srcset="img/profile.webp 1x, img/profile@2x.webp 2x" width="160" height="160" alt="Dominik Otto">
+      <p class="who">Dominik J. Otto, PhD. Postdoctoral Fellow in the <a href="https://settylab.org">Setty Lab</a>, Basic Sciences Division, Fred Hutchinson Cancer Center, Seattle. NIH K99/R00 Pathway to Independence Award (NIGMS).</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-primary" href="research.html">Research</a>
+      <a class="btn btn-ghost" href="publications.html">Publications</a>
+      <a class="btn btn-ghost" href="cv.pdf">CV (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="view">
+  <div class="wrap">
+    <div class="prose">
+      <h2>A tissue is a distribution of cell states</h2>
+      <p>Which fate a single blood stem cell will take cannot be predicted, and genetically identical cells in the same environment differ several-fold in the expression of many genes. Yet populations are predictable: the distribution of states a tissue holds, and the rates at which cells change between them, are reproducible. Part of this comes from numbers, as noise averages out across many cells. The rest is regulation encoded in the genome. That is why I model the tissue, not the single cell.</p>
+    </div>
+
+    <!-- Scroll-driven figure 1 of 2: a 90-frame image sequence (assets/seq/manifold/) scrubbed by scroll (js/site.js).
+         Each step names the frame at which its stage is fully drawn (data-frame, 1-based). With reduced motion or
+         without JavaScript, the poster (the final frame) is shown and the steps read as a list. -->
+    <div class="scrolly" data-scrolly data-frames="assets/seq/manifold/{i}.webp" data-frame-count="90" data-frame-pad="4">
+      <figure class="scrolly-graphic">
+        <div class="figure-panel">
+          <img class="scrolly-still" src="assets/seq/manifold-poster.webp" width="800" height="953"
+               alt="Synthetic cells along a branching tree of cell states, with their density drawn as a surface that rises where cells accumulate.">
+        </div>
+        <figcaption class="scrolly-caption">Synthetic cells. The density is estimated from them and drawn over a two-dimensional layout of cell states; it is not a tissue in 3D.</figcaption>
+      </figure>
+      <ol class="scrolly-steps">
+        <li class="step" data-frame="20" data-caption="Synthetic cells, each placed by its expression state.">
+          <h3>Every cell is a point</h3>
+          <p>Single-cell genomics measures cells one at a time. Each cell is a point in a space with as many dimensions as there are genes, and cells that differentiate trace out a branching path through it.</p>
+        </li>
+        <li class="step" data-frame="40" data-caption="The same cells colored by cell type.">
+          <h3>States, not only types</h3>
+          <p>Many stable states behave as attractors. These are what we recognize as cell types, and clusters summarize them well. Around and between them, cells vary continuously as they differentiate, divide, respond to stress and cycle. Rates and gradients live between clusters, so they cannot be expressed on them.</p>
+        </li>
+        <li class="step" data-frame="55" data-caption="The same cells colored by the density of cells in their state.">
+          <h3>The density is the readout</h3>
+          <p>Cells accumulate where change slows or where they divide, and thin out where change accelerates or cells die. How densely cells populate each state therefore carries the dynamics that produced it. Stable states are dense; transitions are sparse, and new lineages often emerge through them.</p>
+        </li>
+        <li class="step" data-frame="75" data-caption="The density drawn as a surface over a two-dimensional layout of cell states (synthetic cells; not a tissue in 3D).">
+          <h3>Mellon makes it measurable</h3>
+          <p>Mellon infers this density from millions of real cells as a smooth, differentiable function, with uncertainty. It can be compared across conditions, followed over time and built into mechanistic models, which turns a snapshot of a tissue into a quantity that can be modeled. <a href="https://doi.org/10.1038/s41592-024-02302-w"><em>Nature Methods</em>, 2024</a>.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="disease">
+  <div class="wrap prose">
+    <h2>Why it matters for disease</h2>
+    <p>A cell's expression could change in as many directions as it has genes, yet healthy cells use only a few of them. Transcription factors, enhancers, chromatin and signals from neighbors pull cells back when they stray. These are the guardrails of cell identity, and when one fails, identity gives way: deleting Pax5 lets committed B cells become T cells, and leukemic cells co-express lineage programs that healthy cells keep apart. Mutations, inflammation and drugs push cells off their usual states, and the guardrails decide whether they return or drift toward disease.</p>
+    <p>Clusters, trajectories and most models of cells learn from where cells are, and so see the few directions in which cells change. Finding the small set of regulators that hold a tissue's states, and that fail first in disease, would give the targets for monitoring and intervention.</p>
+  </div>
+</section>
+
+<section class="section alt" id="methods">
+  <div class="wrap">
+    <h2>What the methods let biologists do</h2>
+    <p class="prose muted">All are open-source, documented and maintained. Details and links are on the <a href="software.html">software page</a>.</p>
+    <div class="grid grid-2">
+      <article class="card">
+        <h3>Mellon: find stable and transitional states</h3>
+        <p>Ask which cell states are stable and which are transitional, and where along differentiation cells commit, from the density of cells in each state. In human hematopoiesis, B-lineage commitment passes a low-density window in which enhancers are primed and EBF1 activates.</p>
+        <p class="small"><a href="https://doi.org/10.1038/s41592-024-02302-w"><em>Nature Methods</em>, 2024</a> &middot; <a href="software.html#mellon">Software</a></p>
+      </article>
+      <article class="card">
+        <h3>Kompot: compare conditions cell by cell</h3>
+        <p>Compare young and old, treated and untreated, or mutant and wild type at every cell state, without first assigning cells to clusters. Changes that are graded along a transition or confined to part of a cell type stay visible, each with its uncertainty.</p>
+        <p class="small"><a href="https://doi.org/10.1101/2025.06.03.657769">bioRxiv, under review at <em>Cell Systems</em></a> &middot; <a href="software.html#kompot">Software</a></p>
+      </article>
+      <article class="card">
+        <h3>2for1separator: two chromatin profiles from one experiment</h3>
+        <p>Read the accessible and the silenced regulome from a single CUT&amp;Tag2for1 experiment in single cells, separated by statistical inference that treats each signal as continuous along the genome. Developed with the Henikoff laboratory.</p>
+        <p class="small"><a href="https://doi.org/10.1186/s13059-022-02642-w"><em>Genome Biology</em>, 2022</a> &middot; <a href="software.html#twoforone">Software</a></p>
+      </article>
+      <article class="card">
+        <h3>AnnZarro: explore very large datasets in the browser</h3>
+        <p>Explore which cells and which genes resemble one another in very large single-cell datasets, one cell or gene at a time and linked to expression, in a viewer that reads only what is on screen and never changes the data.</p>
+        <p class="small"><a href="https://doi.org/10.64898/2026.10.10.758158">bioRxiv, 2026</a> &middot; <a href="software.html#annzarro">Software</a></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="future">
+  <div class="wrap prose">
+    <h2>Future directions</h2>
+    <p>Building on this work, my future laboratory will ask how tissues hold their cells in the states they need:</p>
+    <ul>
+      <li>what holds cells in their states, and how that fails in aging and cancer;</li>
+      <li>how a cell's neighbors shape its state;</li>
+      <li>how regulatory DNA encodes these states.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section alt" id="about">
+  <div class="wrap">
+    <div class="about">
+      <img class="portrait" src="img/portrait.webp" srcset="img/portrait.webp 1x, img/portrait@2x.webp 2x" width="640" height="818" loading="lazy" alt="Dominik Otto">
+      <div class="prose">
+        <h2>About</h2>
+        <p>I came to biology from mathematics. My bachelor's thesis at Freie Universität Berlin corrected a theorem on the determining nodes of gene regulatory networks, showing that not every feedback loop must be broken to control a network. I earned my PhD in informatics at Universität Leipzig, with research at the Fraunhofer Institute for Cell Therapy and Immunology on gene expression deconvolution and prostate cancer markers. Since 2021 I have been a postdoctoral fellow at Fred Hutch, the first member of Manu Setty's laboratory, where Mellon and Kompot were conceived.</p>
+      </div>
+    </div>
+    <div class="recent">
+      <h2>Recent</h2>
+      <ul class="plain-list">
+        <li><span class="muted small">Oct 2026</span><br>AnnZarro preprint on bioRxiv, with Siddharth Baasri and Manu Setty.</li>
+        <li><span class="muted small">Sept 2026</span><br>Invited talk at the Bertinoro Computational Biology Meeting on spatial context in liver metastases.</li>
+        <li><span class="muted small">May 2026</span><br>Echo preprint, led by Connor Finkbeiner, on how gene expression and chromatin accessibility fall out of step during cell-state transitions.</li>
+        <li><span class="muted small">2025</span><br>NIH K99/R00 Pathway to Independence Award from NIGMS.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER:START -->
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; <span id="year">2026</span> Dominik J. Otto. Postdoctoral Fellow, Fred Hutchinson Cancer Center, Seattle.</p>
+    <nav aria-label="Profiles">
+      <a href="https://github.com/katosh">GitHub</a>
+      <a href="https://orcid.org/0000-0002-6116-053X">ORCID</a>
+      <a href="https://scholar.google.com/citations?user=ujPYhPMAAAAJ">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/dominikotto/">LinkedIn</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</footer>
+<!-- FOOTER:END -->
+</body>
+</html>

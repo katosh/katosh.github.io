@@ -1,0 +1,71 @@
+/*
+ * gastrulation-scrolly.css: Mellon's time-continuous density, scrubbed by scroll (scroll = time).
+ * Pairs with gastrulation-scrolly.js and gastrulation-scrolly.html. No inline styles (CSP).
+ * Uses the site's tokens where present (--text, --text-muted, --bg-alt, --rule) with fallbacks,
+ * so it follows the site's light and dark themes; the figure itself sits on a white card.
+ * Sticky site header: set --dyn-top on an ancestor (shared with the dynamics section).
+ * Without JS or with prefers-reduced-motion: the E7.5 still, the caption and the step list.
+ */
+.tsd { position: relative; color: var(--text, #1d2125); }
+.tsd *, .tsd *::before, .tsd *::after { box-sizing: border-box; }
+.tsd-stage { padding: 8px 0; }
+.tsd-inner { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 16px; display: grid; gap: 12px; }
+.tsd-figure { margin: 0; }
+.tsd-card {
+  position: relative; background: #fff; border-radius: 10px; overflow: hidden;
+  border: 1px solid var(--rule, #dcd8cf); aspect-ratio: 5 / 3; width: 100%;
+}
+.tsd-card img, .tsd-card canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.tsd-card canvas { display: none; }
+.tsd-figure figcaption { font-size: .82rem; line-height: 1.45; color: var(--text-muted, #565d64); margin-top: 6px; }
+.tsd-readout { display: none; }
+.tsd-steps { list-style: none; margin: 8px auto 0; padding: 0 16px; max-width: 1120px; }
+.tsd-step {
+  margin: 10px 0; padding: 12px 14px; border-radius: 10px; max-width: 34rem;
+  background: var(--bg-alt, #f2f0ea); border: 1px solid var(--rule, #dcd8cf);
+}
+.tsd-step h3 { margin: 0 0 4px; font-size: 1rem; line-height: 1.3; }
+.tsd-step p { margin: 0; font-size: .93rem; line-height: 1.5; }
+.tsd-active-text { display: none; }
+
+/* Live, scroll-driven version (added by the script). */
+.tsd.tsd-live .tsd-stage {
+  position: sticky; top: var(--dyn-top, 0px); height: calc(100vh - var(--dyn-top, 0px));
+  height: calc(100svh - var(--dyn-top, 0px)); display: flex; align-items: center; padding: 0;
+}
+.tsd.tsd-live .tsd-card canvas { display: block; }
+.tsd.tsd-live .tsd-readout {
+  display: block; position: absolute; right: 10px; top: 8px; margin: 0; padding: 2px 8px;
+  border-radius: 6px; background: rgba(255, 255, 255, .9); color: #1d2125;
+  font: 600 .9rem/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  visibility: hidden;
+}
+.tsd.tsd-live .tsd-readout.is-ready { visibility: visible; }   /* shown once a frame is drawn */
+.tsd.tsd-live .tsd-steps { position: relative; margin-top: calc(var(--dyn-top, 0px) - 100svh); padding-bottom: 30vh; pointer-events: none; }
+.tsd.tsd-live .tsd-step { margin: 0 0 60vh; opacity: .35; transition: opacity .3s ease; pointer-events: auto; }
+.tsd.tsd-live .tsd-step:first-child { margin-top: 65vh; }
+.tsd.tsd-live .tsd-step.is-active { opacity: 1; }
+
+@media (min-width: 900px) {
+  .tsd-inner { grid-template-columns: minmax(0, 1fr) min(640px, 56vw); align-items: center; }
+  .tsd-figure { grid-column: 2; }
+  .tsd.tsd-live .tsd-card { width: min(100%, calc((100svh - var(--dyn-top, 0px) - 9rem) * 5 / 3)); margin-left: auto; }
+  .tsd.tsd-live .tsd-step { max-width: min(34rem, calc(100% - min(640px, 56vw) - 48px)); }
+}
+@media (max-width: 899px) {
+  .tsd.tsd-live .tsd-stage { align-items: flex-start; padding-top: 10px; }
+  .tsd.tsd-live .tsd-step { opacity: 0; margin-bottom: 70vh; }
+  .tsd.tsd-live .tsd-step.is-active { opacity: 0; }
+  .tsd.tsd-live .tsd-active-text {
+    display: block; position: absolute; left: 12px; right: 12px; bottom: 12px; max-height: 34%;
+    overflow: auto; padding: 12px 14px; border-radius: 10px;
+    background: var(--bg-alt, #f2f0ea); border: 1px solid var(--rule, #dcd8cf);
+  }
+  .tsd-active-text h3 { margin: 0 0 4px; font-size: 1rem; }
+  .tsd-active-text p { margin: 0; font-size: .9rem; line-height: 1.45; }
+}
+@media (prefers-reduced-motion: reduce) { .tsd-step { transition: none; } }
+.tsd .visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}

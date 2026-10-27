@@ -1,0 +1,24 @@
+<!--
+  Direction 1 figure (text column): a cell-state density and the same density drawn as a
+  Waddington-style landscape, turning together as the page scrolls. Include once, with
+    <link rel="stylesheet" href="assets/seq/waddington/waddington-figure.css">
+    <script src="assets/seq/waddington/waddington-figure.js" defer></script>
+  No inline styles or scripts (CSP). Illustration; no model or method is shown.
+-->
+<figure class="wdf" data-wdf data-base="assets/seq/waddington/">
+  <div class="wdf-pair">
+    <div class="wdf-panel">
+      <img src="assets/seq/waddington/poster-density.webp" width="640" height="360" loading="lazy"
+           alt="A smooth surface whose height is cell-state density, with cells as dots; the tallest peak is where most cells sit.">
+      <canvas data-seq="density" width="640" height="360" aria-hidden="true"></canvas>
+      <p class="wdf-label">Where cells accumulate</p>
+    </div>
+    <div class="wdf-panel">
+      <img src="assets/seq/waddington/poster-landscape.webp" width="640" height="360" loading="lazy"
+           alt="The same states drawn as a landscape of valleys and ridges; the cells collect in the deepest valley.">
+      <canvas data-seq="landscape" width="640" height="360" aria-hidden="true"></canvas>
+      <p class="wdf-label">The same states as a landscape</p>
+    </div>
+  </div>
+  <figcaption>Where cells accumulate, the landscape has valleys: a picture of the states a tissue holds, and of what keeps cells in them. Illustration.</figcaption>
+</figure>
