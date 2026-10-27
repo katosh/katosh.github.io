@@ -1,8 +1,9 @@
 /*
  * gastrulation-scrolly.js: scroll position = developmental time (E6.5 to E8.5).
  * Frames: <data-base>frames/0001.webp .. NNNN.webp (data-frames), evenly spaced in time from
- * data-e-start to data-e-end. Steps carry data-e-from / data-e-to and are activated by the
- * current embryonic day, so the text follows the time shown. No dependencies, no inline code.
+ * data-e-start to data-e-end. Steps carry data-e-from; each card's centre crossing the middle of the
+ * screen is the moment its stage is shown (time is interpolated between cards), and a step is active
+ * from its stage on, so the text, the frame and the readout follow one clock. No dependencies, no inline code.
  */
 (function () {
   'use strict';
@@ -33,6 +34,7 @@
         im.src = self.base + 'frames/' + pad(i) + '.webp'; self.imgs.push(im);
       }
     };
+    this.load = load; // also started from update() once the section is near, in case the observer is late
     if (window.IntersectionObserver) {
       new IntersectionObserver(function (es) { if (es[0].isIntersecting) load(); }, { rootMargin: '800px 0px' }).observe(root);
     } else load();
@@ -44,9 +46,36 @@
     this.update();
   }
   Tsd.prototype.update = function () {
-    var r = this.root.getBoundingClientRect(), vh = window.innerHeight;
-    var p = clamp(-r.top / Math.max(1, r.height - vh));
-    var i = Math.round(p * (this.n - 1));
+    var r = this.root.getBoundingClientRect(), vh = window.innerHeight, mid = vh * 0.62;
+    if (!this.imgs.length && this.load && r.top < 2 * vh && r.bottom > -vh) this.load();
+    // Time is anchored to the step cards: a card's centre crossing the activation line (62% down the
+    // screen, so a card is active by the time it sits in the middle) is the
+    // moment its stage (data-e-from) is shown, so the active card, the frame and the readout agree.
+    // Before the first card the time holds at its stage; after the last it runs on to the end of the
+    // section. Between anchors it is interpolated linearly.
+    var pts = [];
+    for (var q = 0; q < this.steps.length; q++) {
+      var b = this.steps[q].getBoundingClientRect(), ef = parseFloat(this.steps[q].getAttribute('data-e-from'));
+      if (!isNaN(ef) && b.height) pts.push([(b.top + b.bottom) / 2, ef]);
+    }
+    pts.push([Math.max(r.bottom - mid, pts.length ? pts[pts.length - 1][0] + 1 : r.bottom - mid), this.e1]);
+    var eCont;
+    if (pts.length < 2) {
+      eCont = this.e0 + (this.e1 - this.e0) * clamp(-r.top / Math.max(1, r.height - vh));
+    } else if (mid <= pts[0][0]) {
+      eCont = pts[0][1];
+    } else {
+      eCont = pts[pts.length - 1][1];
+      for (var z = 0; z < pts.length - 1; z++) {
+        if (mid <= pts[z + 1][0]) {
+          var t = (mid - pts[z][0]) / Math.max(1, pts[z + 1][0] - pts[z][0]);
+          eCont = pts[z][1] + clamp(t) * (pts[z + 1][1] - pts[z][1]);
+          break;
+        }
+      }
+    }
+    var i = Math.round((eCont - this.e0) / (this.e1 - this.e0) * (this.n - 1));
+    i = Math.min(this.n - 1, Math.max(0, i));
     var e = this.e0 + (this.e1 - this.e0) * i / (this.n - 1);
     var a = 0;
     for (var k = 0; k < this.steps.length; k++) {
