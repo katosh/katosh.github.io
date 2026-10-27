@@ -102,7 +102,7 @@
   <div class="wrap prose">
     <p class="eyebrow">Computational biology &middot; Fred Hutchinson Cancer Center</p>
     <h1>Learning the regulation that holds cells in the states a healthy tissue needs</h1>
-    <p class="lede">I develop machine learning that treats a tissue as a whole: a continuous distribution of cell states, learned from millions of single cells, with the uncertainty of every estimate stated. My aim is to understand the regulation that keeps each state in place and how it fails in aging and cancer.</p>
+    <p class="lede">I develop machine learning that treats a tissue as a whole: a continuous distribution of cell states, learned from millions of single cells, with the uncertainty of every estimate stated. With it I want to find the regulation that keeps each state in place, see where that regulation erodes in aging and cancer, and design regulatory DNA that reinforces it.</p>
     <div class="hero-id">
       <img class="profile" src="img/profile.webp" srcset="img/profile.webp 1x, img/profile@2x.webp 2x" width="160" height="160" alt="Dominik Otto">
       <p class="who">Dominik J. Otto, PhD. Postdoctoral Fellow in the <a href="https://settylab.org">Setty Lab</a>, Basic Sciences Division, Fred Hutchinson Cancer Center, Seattle. NIH K99/R00 Pathway to Independence Award (NIGMS).</p>
@@ -159,7 +159,7 @@
   <div class="wrap prose">
     <h2>Why it matters for disease</h2>
     <p>A cell's expression could change in as many directions as it has genes, yet healthy cells use only a few of them. Transcription factors, enhancers, chromatin and signals from neighbors pull cells back when they stray. These are the guardrails of cell identity, and when one fails, identity gives way: deleting Pax5 lets committed B cells become T cells, and leukemic cells co-express lineage programs that healthy cells keep apart. Mutations, inflammation and drugs push cells off their usual states, and the guardrails decide whether they return or drift toward disease.</p>
-    <p>Clusters, trajectories and most models of cells learn from where cells are, and so see the few directions in which cells change. Finding the small set of regulators that hold a tissue's states, and that fail first in disease, would give the targets for monitoring and intervention.</p>
+    <p>Clusters, trajectories and most models of cells learn from where cells are, and so see the few directions in which cells change. A model of the whole distribution, including how far it spreads, can also learn the many directions in which identity is defended. The goal is the small set of regulators that hold a tissue's states and fail first in disease: the targets for monitoring and intervention.</p>
   </div>
 </section>
 
@@ -195,12 +195,13 @@
 <section class="section" id="future">
   <div class="wrap prose">
     <h2>Future directions</h2>
-    <p>Building on this work, my future laboratory will ask how tissues hold their cells in the states they need:</p>
-    <ul>
-      <li>what holds cells in their states, and how that fails in aging and cancer;</li>
-      <li>how a cell's neighbors shape its state;</li>
-      <li>how regulatory DNA encodes these states.</li>
-    </ul>
+    <p>My future laboratory will be computational and will work closely with experimental laboratories. Its program has three directions, each standing on its own and gaining from the others. All three model the tissue: the first follows how the distribution changes in time, the second places each state among its neighbors, and the third turns the model around to produce regulatory sequence from a described function.</p>
+    <ol class="directions-list">
+      <li><strong>Guardrails.</strong> Learn, from measured distributions of cells, which regulation holds each state, which perturbations release it, and where it erodes with age or in leukemia. Funded by my K99/R00 award.</li>
+      <li><strong>Spatial context.</strong> Describe each cell's surroundings without first assigning cell types, so that spatial organization can be linked to cell state and compared across patients.</li>
+      <li><strong>Regulatory sequence design.</strong> Condition generative models of regulatory DNA on the behavior a state should show, and judge each design by whether that behavior follows.</li>
+    </ol>
+    <p><a href="research.html#directions">More on the research page</a></p>
   </div>
 </section>
 

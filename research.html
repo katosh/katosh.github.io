@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Research | Dominik J. Otto</title>
-<meta name="description" content="Research of Dominik J. Otto: cell states as a continuum, the guardrails of cell identity, and published methods (Mellon, Kompot, 2for1separator) that represent a tissue as a distribution of cell states.">
+<meta name="description" content="Research program of Dominik J. Otto: the guardrails of cell identity, spatial context and regulatory sequence design, built on a continuous, probabilistic representation of the tissue.">
 <meta name="author" content="Dominik J. Otto">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
@@ -25,9 +25,11 @@
 <script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="stylesheet" href="css/site.css">
 <link rel="stylesheet" href="assets/seq/gastrulation/gastrulation-scrolly.css">
+<link rel="stylesheet" href="assets/seq/guardrails/guardrails-figure.css">
 <link rel="stylesheet" href="assets/seq/waddington/waddington-figure.css">
 <link rel="stylesheet" href="assets/seq/twoforone/twoforone-figure.css">
 <script src="assets/seq/gastrulation/gastrulation-scrolly.js" defer></script>
+<script src="assets/seq/guardrails/guardrails-figure.js" defer></script>
 <script src="assets/seq/waddington/waddington-figure.js" defer></script>
 <script src="assets/seq/twoforone/twoforone-figure.js" defer></script>
 <script src="assets/js/kompot-compare.js" defer></script>
@@ -75,8 +77,33 @@
     <div class="prose">
       <p>A cell's expression can change in as many directions as it has genes, yet healthy cells use only a few of them. The states they occupy form a thin sheet through this space of thousands of dimensions, and the directions off that sheet far outnumber those along it. Healthy cells rarely take those directions, because transcription factors, enhancers, chromatin and signals from neighbors pull cells back when they stray. These are the guardrails of cell identity. When one is removed, identity gives way: deleting Pax5 lets committed B cells dedifferentiate and become T cells, and deleting Bcl11b turns committed T cells into cells resembling natural killer cells. Mutations, inflammation and drugs push cells off the sheet, and the guardrails decide whether they return or drift toward disease.</p>
       <p>Clusters, trajectories, RNA velocity and virtual-cell models learn from where observed cells are, and so see the few directions cells change along and little of the many in which identity is defended and lost. Noise pushes cells off the sheet as readily as along it, so a sheet that stays thin is itself evidence of regulation pulling them back.</p>
-      <p>Understanding this regulation would identify the small set of regulators that determine how a tissue behaves and how it departs from homeostasis in disease, the candidates for monitoring and intervention. The questions my future laboratory will ask are listed under <a href="index.html#future">future directions</a>.</p>
+      <p>Cells constantly fluctuate, and this noise spreads them in every direction, much as diffusion spreads a drop of ink in water. The states a tissue keeps despite that spread show where regulation holds its cells, while division and loss change how many cells each state holds.</p>
+      <p>My future laboratory will measure these guardrails: for every cell state, how strongly it is held, which regulators hold it and which perturbations release it. It will then write regulatory DNA that reinforces or releases them. The goal is to identify the small set of regulators that determine how a tissue behaves and how it departs from homeostasis in disease, the candidates for monitoring and intervention. The laboratory will be computational and will work closely with experimental laboratories, which run the measurements the models ask for.</p>
     </div>
+  </div>
+</section>
+
+<section class="section" id="directions">
+  <div class="wrap prose wide">
+    <h2>Future directions</h2>
+    <p id="guardrails">The first direction asks which regulation holds each cell state, which perturbations release it, and where that regulation erodes, for example with age or in leukemia. The aim is to learn these guardrails of cell identity from measured distributions of cells, building on Mellon, and to report which parts of the answer the data determine and how certain each is. My NIH K99/R00 award (NIGMS) funds this direction.</p>
+    <figure class="grf" data-grf data-base="assets/seq/guardrails/">
+      <img class="grf-still" src="assets/seq/guardrails/still-triptych.webp" width="976" height="480" loading="lazy"
+           alt="Three panels of synthetic cells on a branching tree of states: cells spread away from the tree, cells held close to it, and cell lineages that divide and are lost along it.">
+      <div class="grf-card">
+        <img src="assets/seq/guardrails/poster.webp" width="480" height="720" loading="lazy" alt="">
+        <canvas class="grf-canvas" width="480" height="720" role="img"
+                aria-label="Synthetic cells on a branching tree of states: first spreading away from it, then held close to it, then dividing and being lost along it, as the page scrolls."></canvas>
+      </div>
+      <ol class="grf-stages" aria-hidden="true">
+        <li>Cells fluctuate</li>
+        <li>Regulation holds them</li>
+        <li>Cells divide and are lost</li>
+      </ol>
+      <figcaption>Illustration: fluctuation, regulation and division shape where cells sit. Synthetic cells.</figcaption>
+    </figure>
+    <p id="context">The second asks how a cell's neighbors shape its state. Spatial transcriptomics measures each cell's state and its position, and I am developing ways to describe each cell's surroundings without first assigning cell types, so that spatial organization can be linked to cell state and compared across sections and patients.</p>
+    <p id="design">The third turns the models around: generative models of regulatory DNA conditioned on the behavior a cell state should show, rather than on a cell-type label, and judged by whether that behavior follows. The laboratory will be computational, and its designs will be tested with partner laboratories.</p>
   </div>
 </section>
 
@@ -228,6 +255,7 @@
     <h2>Machine learning that can be checked</h2>
     <p>Three principles carry through my work. First, every prediction comes with its uncertainty, so a supported result can be told apart from an extrapolation, and the uncertainty shows where the data are thin. Second, what my models learn on the way to a prediction, such as a density of cell states or a change in expression at every state, is a biological quantity that can be measured and tested directly. Third, AI agents help build and check the models, but they are not the scientific model; the models themselves use modern machine learning where it serves the question, and their parts stay measurable. Every decision and result the agents produce is documented with its evidence, so each step can be reproduced and audited.</p>
     <p>For the third, I built <a href="ai.html">agent_sandbox and Nexus</a>, open tools that run sandboxed teams of AI agents on shared computing clusters, with independent re-checks of their results.</p>
+    <p>What is fixed across the program is the representation, the training objective and the requirement that every estimate carries its uncertainty. The learner is open: Gaussian processes, transformers, neural differential equations, flow-based models and discrete diffusion each fit where their strengths lie.</p>
   </div>
 </section>
 

@@ -1,0 +1,29 @@
+/*
+ * guardrails-figure.css: compact Direction 1 illustration inside the text column.
+ * Scrubbed by the figure's position as it scrolls through the viewport (no pinning).
+ * Pairs with guardrails-figure.js and guardrails-figure.html. No inline styles (CSP).
+ * Without JS or with prefers-reduced-motion: a static three-panel still.
+ */
+.grf { margin: 1.5rem 0; }
+.grf-card {
+  position: relative; margin: 0 auto; width: min(100%, 320px); aspect-ratio: 2 / 3;
+  border-radius: 10px; overflow: hidden; background: #f4f3ef; border: 1px solid var(--rule, #dcd8cf);
+  display: none;
+}
+.grf-card canvas, .grf-card img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.grf-still { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--rule, #dcd8cf); background: #f4f3ef; }
+.grf-stages {
+  list-style: none; margin: 10px auto 0; padding: 0; display: flex; justify-content: center;
+  gap: 6px; flex-wrap: wrap; font-size: .8rem; line-height: 1.3;
+}
+.grf-stages li {
+  padding: 3px 9px; border-radius: 999px; border: 1px solid var(--rule, #dcd8cf);
+  color: var(--text-muted, #565d64); transition: background-color .25s ease, color .25s ease;
+}
+.grf figcaption { font-size: .82rem; line-height: 1.45; color: var(--text-muted, #565d64); margin-top: 8px; text-align: center; }
+
+/* Live version (added by the script). */
+.grf.grf-live .grf-card { display: block; }
+.grf.grf-live .grf-still { display: none; }
+.grf.grf-live .grf-stages li.is-active { background: var(--accent-soft, #e2efee); color: var(--text, #1d2125); border-color: var(--accent, #0f6b6e); }
+@media (prefers-reduced-motion: reduce) { .grf-stages li { transition: none; } }
