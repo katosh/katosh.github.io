@@ -98,7 +98,7 @@
 <section class="section" id="containment">
   <div class="wrap"><div class="prose">
     <h2>Containment</h2>
-    <p>Nexus starts its agents without a confirmation for each command, so it runs only inside a containment layer. agent_sandbox is that layer for shared computing clusters. It isolates agents with kernel namespaces rather than containers, so cluster modules, conda environments and GPU libraries work as they do on the host. Writes are confined to the project directory, paths that are not mounted do not exist inside the sandbox, and the operator decides which credentials reach the agents; in my own setup, the credentials agents can read are ones I chose to share.</p>
+    <p>Nexus starts its agents without a confirmation for each command, so it runs only inside a containment layer. agent_sandbox is that layer for shared computing clusters. It isolates agents with kernel namespaces rather than containers, so cluster modules, conda environments and GPU libraries work as they do on the host. Writes are confined to the project directory, paths that are not mounted do not exist inside the sandbox, and the operator decides which credentials and data reach the agents; in my own setup, the credentials and data agents can read are ones I chose to share.</p>
     <p>Slurm commands go through a chaperon that runs outside the sandbox. It checks each submission, shows agents only their own project's jobs, and runs every job inside the sandbox on the compute node, so submitting a job is not a way out. agent_sandbox is best-effort isolation in user space, not a security product, and its documentation lists its limits.</p>
   </div></div>
 </section>
