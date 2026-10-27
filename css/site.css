@@ -441,3 +441,7 @@ canvas.anim-kompot { display: block; width: 100%; aspect-ratio: 16 / 9; }
 .narrow-figure { max-width: 640px; }
 .card.span-2 > p { max-width: var(--measure); }
 .card > figure { margin: 14px 0 18px; }
+/* Portrait with photographer credit (metadata of the Fred Hutch shoot, 1 Jul 2025) */
+.portrait-fig { margin: 0; }
+.photo-credit { font-size: .75rem; color: var(--text-muted); margin-top: 6px; }
+@media (max-width: 860px) { .about .portrait-fig { max-width: 320px; margin: 0 auto; } .about .portrait-fig .portrait { max-width: 100%; } }
