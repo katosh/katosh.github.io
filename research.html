@@ -176,7 +176,7 @@
       </article>
       <article class="card">
         <h3>Comparing conditions without clusters</h3>
-        <p>Kompot, which I conceived, performs cluster-free differential expression: it compares conditions cell by cell on the continuum of cell states, for differential expression and abundance, without assigning cells to clusters or neighborhoods, and was the most precise of ten methods in five benchmark scenarios. In aging mouse bone marrow, age-associated change proved small in aggregate but structured across cell states, some of it confined to part of one cell type.</p>
+        <p>Kompot, which I conceived, performs cluster-free differential expression: it compares conditions cell by cell on the continuum of cell states, for differential expression and abundance, without assigning cells to clusters or neighborhoods, and was the most precise of ten methods in five benchmark scenarios. Because each gene's expression is estimated as a smooth function across cell states, nearby states share information and their estimates are correlated. Kompot accounts for this covariance when it combines a gene's evidence across states, so a change is neither counted twice where states are similar nor missed where it is small everywhere or reverses between related states. In aging mouse bone marrow, age-associated change proved small in aggregate but structured across cell states, some of it confined to part of one cell type.</p>
         <figure>
           <div class="figure-panel">
             <img src="assets/img/kompot-aging-foldchange.webp" srcset="assets/img/kompot-aging-foldchange.webp 1x, assets/img/kompot-aging-foldchange@2x.webp 2x" width="1000" height="965" loading="lazy"
@@ -243,7 +243,7 @@
         </li>
         <li class="step">
           <h3>The change at every cell state</h3>
-          <p>The difference between conditions is computed at every cell state, and a change stands out where it exceeds the uncertainty. No clusters are needed, so a change confined to part of a cell type stays visible.</p>
+          <p>The difference between conditions is computed at every cell state, and a change stands out where it exceeds the uncertainty. No clusters are needed, so a change confined to part of a cell type stays visible. When Kompot adds up a gene's evidence across states, it accounts for the correlation between nearby estimates that comes from the smooth function, so similar states are not counted twice.</p>
         </li>
       </ol>
     </div>

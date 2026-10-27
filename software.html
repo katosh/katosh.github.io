@@ -87,7 +87,7 @@
       <article class="card" id="kompot">
         <p class="kicker">Lead developer</p>
         <h3>Kompot</h3>
-        <p>Cluster-free differential expression and abundance. Kompot models expression in each condition as a Gaussian-process function on the shared space of cell states and compares the conditions cell by cell with posterior uncertainty, so that changes graded along a transition or confined to part of a cell type are not averaged away. Kompot is an scverse ecosystem package.</p>
+        <p>Cluster-free differential expression and abundance. Kompot models expression in each condition as a Gaussian-process function on the shared space of cell states and compares the conditions cell by cell with posterior uncertainty, so that changes graded along a transition or confined to part of a cell type are not averaged away. Its gene-level test accounts for the covariance between nearby states that comes from the function estimation, so a change is neither counted twice where states are similar nor missed where it is small everywhere or reverses between related states. Kompot is an scverse ecosystem package.</p>
         <p class="small">Install: <code class="install">pip install kompot</code> &middot; Preprint: <a href="https://doi.org/10.1101/2025.06.03.657769">bioRxiv, under review at <em>Cell Systems</em></a></p>
         <div class="sw-links">
           <a href="https://github.com/settylab/kompot">GitHub</a>
